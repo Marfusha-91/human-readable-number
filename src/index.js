@@ -1,4 +1,4 @@
-let th = ['','thousand','million', 'billion','trillion'];
+
 let dg = ['zero','one','two','three','four', 'five','six','seven','eight','nine'];
  let tn = ['ten','eleven','twelve','thirteen', 'fourteen','fifteen','sixteen', 'seventeen','eighteen','nineteen'];
  let tw = ['twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
@@ -11,7 +11,7 @@ module.exports = function toReadable (number) {
  let x = number.indexOf('.');  
  if (x == -1) 
  x = number.length;
- if ( x > 15)  return 'big';
+ if ( x > 10)  return 'big';
  let n = number.split(''); 
    let str = '';
     let sk = 0;
@@ -30,14 +30,8 @@ module.exports = function toReadable (number) {
             if ((x-i)%3==0) str += 'hundred ';
             sk=1;
         }
-        if ((x-i)%3==1) {
-            if (sk)
-                str += th[(x-i-1)/3] + ' ';
-            sk=0;
-        }
-    }
-
-    if (x != number.length) {
+      }
+       if (x != number.length) {
         let y = number.length;
         str += 'point ';
         for (let i=x+1; i<y; i++)
