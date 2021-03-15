@@ -11,7 +11,7 @@ module.exports = function toReadable (number) {
  if (x == -1) 
  x = number.length;
  if ( x > 15)  return 'big';
- let n = num.split(''); 
+ let n = number.split(''); 
    let str = '';
     let sk = 0;
     for (let i=0;   i < x;  i++) {
@@ -37,7 +37,7 @@ module.exports = function toReadable (number) {
     }
 
     if (x != number.length) {
-        var y = number.length;
+        let y = number.length;
         str += 'point ';
         for (let i=x+1; i<y; i++)
             str += dg[n[i]] +' ';
