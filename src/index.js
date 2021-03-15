@@ -1,10 +1,10 @@
-module.exports = function toReadable(number) {
-    
- let dg = ['zero','one','two','three','four', 'five','six','seven','eight','nine'];
+let dg = ['zero','one','two','three','four', 'five','six','seven','eight','nine'];
  let tn = ['ten','eleven','twelve','thirteen', 'fourteen','fifteen','sixteen', 'seventeen','eighteen','nineteen'];
  let tw = ['twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
  let th = ['','thousand','million', 'billion','trillion'];
- number = number.toString();
+
+module.exports = function toReadable (number) {
+  number = number.toString();
  number = number.replace(/[\, ]/g,' ');
  if ( number != parseFloat(number)) return 'not a number';
  let x = number.indexOf('.');  
