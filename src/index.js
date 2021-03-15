@@ -5,7 +5,7 @@ module.exports = function toReadable (number) {
  let tw = ['twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
  let th = ['','thousand','million', 'billion','trillion'];
  number = number.toString();
- number = number.replace([\, ]/g,'');
+ number = number.replace([\, ]/g,' ');
  if ( number != parseFloat(number)) return 'not a number';
  let x = number.indexOf('.');  
  if (x == -1) 
